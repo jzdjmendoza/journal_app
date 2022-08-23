@@ -6,15 +6,23 @@
         <th>ID</th>
         <th>Category Name</th>
         <th>Description</th>
+        <th>Tasks</th>
       </tr>
     </thead>
 
     <tbody>
       <tr>
-          <td><%= category.id%></td>
-          <td><%= category.name%></td>
-          <td><%= category.description%></td>
-        </tr>
+        <td><%= category.id%></td>
+        <td><%= category.name%></td>
+        <td><%= category.description%></td>
+        <td>
+          <% category.tasks.each do |task| %>
+            <p>
+              <%= link_to "#{task.name}", task %>
+            </p>  
+          <% end %>
+        </td>
+      </tr>
     </tbody>
 
   </table>
